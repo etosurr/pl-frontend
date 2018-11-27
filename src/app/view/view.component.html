@@ -1,3 +1,24 @@
-<p>
-  view works!
-</p>
+<div class="headline">
+  <h1>Directory: {{ currentPath }}</h1>
+  <button (click)="back()" *ngIf="oldPath.length">< Back</button>
+</div>
+<table class="content-table">
+  <tr>
+    <th>Type</th>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor="let element of currentPathContent">
+    <td><i class="material-icons">{{ element.directory ? 'folder' : 'insert_drive_file' }}</i></td>
+    <td>
+      <a
+        *ngIf="element.directory"
+        (click)="route(element.name)"
+        href="#"
+      >{{ element.name }}</a>
+      <a
+        *ngIf="!element.directory"
+        href="/api/get?file={{ currentPath + element.name }}"
+      >{{ element.name }}</a>
+    </td>
+  </tr>
+</table>

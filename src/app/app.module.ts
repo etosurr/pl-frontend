@@ -4,17 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewComponent } from './view/view.component';
+import { MatButtonModule, MatIconModule, MatTableModule } from '@angular/material';
+import {FilesystemService} from './filesystem.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewComponent
+    ViewComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
   ],
-  providers: [],
+  providers: [FilesystemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

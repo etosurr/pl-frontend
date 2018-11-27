@@ -1,0 +1,22 @@
+.content-table {
+  th {
+    text-align: left;
+  }
+
+  th, td {
+    padding: 0 20px;
+  }
+
+  tr > td:first-child {
+    color: #656bff;
+  }
+}
+
+.headline {
+  display: inline;
+
+  button {
+    font-size: 25px;
+    float: right;
+  }
+}
